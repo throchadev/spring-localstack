@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  aws:
+    image: 'localstack/localstack'
+    container_name: 'localstack'
+    environment:
+      - SERVICES=sqs
+      - DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=teste
+      - AWS_SECRET_ACCESS_KEY=teste
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    ports:
+      - '4566:4566'
